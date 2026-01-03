@@ -18,7 +18,6 @@ function ToDoList(){
     function addTask(){
         if(newTask.trim() !== "")
         {
-            console.log("This is the "+newTask+" it's not empty");
             setTasks(t => [...t, newTask]);
             setNewTask("");
         }
@@ -26,7 +25,6 @@ function ToDoList(){
     }
 
     function editTask(index){
-        console.log("Edit in progress..",index);
         setEdited(true);
         setId(index);
         setEdit(tasks[index]);
