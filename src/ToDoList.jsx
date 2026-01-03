@@ -8,13 +8,15 @@ function ToDoList(){
     const [edited, setEdited] = useState(false)
     const [edit, setEdit] = useState("")
     const [id, setId] = useState();
-
+    
+    //handles the input change while a new task is being inputed
     function handleInputChange(event){
         if(!edited){
            setNewTask(event.target.value);
         }
     }
 
+    //Add a new task
     function addTask(){
         if(newTask.trim() !== "")
         {
@@ -24,16 +26,19 @@ function ToDoList(){
         
     }
 
+    //Set the mode to edit mode and grab the position and text of the task being edited
     function editTask(index){
         setEdited(true);
         setId(index);
         setEdit(tasks[index]);
     }
 
+    //handles the input change when a task is being edited
     function editingTask(event){
         setEdit(event.target.value);
     }
 
+    //Gets out of edit mode and adds the new changes to the original list
     function editDone(){
         const updatedTasks = [...tasks];
         updatedTasks[id] = edit;
@@ -41,12 +46,14 @@ function ToDoList(){
         setEdited(false);
     }
 
+    //deletes a task
     function deleteTask(index){
 
         const updatedTasks = tasks.filter((_, i) => i !== index);
         setTasks(updatedTasks);
     }
 
+    //Moves a task up
     function moveTaskUp(index){
         if(index > 0)
         {
@@ -57,6 +64,7 @@ function ToDoList(){
         }
     }
 
+    //Moves a task down
     function moveTaskDown(index){
         if(index < tasks.length - 1)
         {
