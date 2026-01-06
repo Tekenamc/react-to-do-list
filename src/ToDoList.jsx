@@ -40,10 +40,14 @@ function ToDoList(){
 
     //Gets out of edit mode and adds the new changes to the original list
     function editDone(){
-        const updatedTasks = [...tasks];
-        updatedTasks[id] = edit;
-        setTasks(updatedTasks);
+        if(edit.trim() !== "")
+        {
+            const updatedTasks = [...tasks];
+            updatedTasks[id] = edit;
+            setTasks(updatedTasks);
+        }
         setEdited(false);
+    
     }
 
     //deletes a task
