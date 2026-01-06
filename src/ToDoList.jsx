@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 
 function ToDoList(){
 
-    const [tasks, setTasks] = useState(["Get a haircut", "Go to the gym", "Feed the Goldfish"])
+    const [tasks, setTasks] = useState(["Get a haircut", "Go to the gym", "Feed the Goldfish"]);
     const [newTask, setNewTask] = useState("");
-    const [edited, setEdited] = useState(false)
-    const [edit, setEdit] = useState("")
+    const [edited, setEdited] = useState(false);
+    const [edit, setEdit] = useState("");
     const [id, setId] = useState();
     
     //handles the input change while a new task is being inputed
